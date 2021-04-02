@@ -7,8 +7,8 @@ RUN apt-get clean
 EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]
 
-RUN docker build -t="ubuntuweb"
-RUN docker run -d -p 80:80 "ubuntuweb"
+RUN docker build -t ubuntu
+RUN docker run -it --name ubuntuweb -p 80:80 /bin/bash
 
 ADD . /var/www/html
 
