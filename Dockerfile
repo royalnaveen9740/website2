@@ -1,7 +1,7 @@
 FROM ubuntu
-ENV TZ =Asia/Kathmandu
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apt-get update
+ENV TZ=Asia/Kathmandu
+RUN ln -snf /usr/share/zoneinfo/$TZ  /etc/localtime && echo $TZ >/etc/timezone
+RUN apt update
 RUN apt-get install -y apache2
 RUN apt-get clean
 EXPOSE 80
