@@ -7,7 +7,7 @@ RUN apt-get clean
 EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]
 
-RUN docker build . -t webserver:w1 /bin/bash/
+RUN docker build -t webserver:w1 /bin/bash/
 
 RUN docker run -dit --name=webserver -p 80:80 webserver:w1 /bin/bash/
 
